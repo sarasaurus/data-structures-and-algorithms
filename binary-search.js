@@ -4,9 +4,11 @@ const search = module.exports = {};
 
 search.BinarySearch = (arr, key) => {
   let success = null;
-  let fail;
+  const fail = -1;
   for (let i = 0; i <= arr.length; i++) {
-    arr[i] === key ? success = arr[i] : fail = -1;
+    if (arr[i] === key) {
+      success = i;
+    }
   }
   if (success !== null) {
     return success;
