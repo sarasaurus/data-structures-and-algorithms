@@ -14,4 +14,4 @@ largestProduct([[1,2],[9,4],[9,6],[7,8]]) returns 81
 ## Checklist
 - [x] don't use built-in methods
 - [x] write 3 tests using jest
-- [] ensure tests are passing
+- [x] ensure tests are passing

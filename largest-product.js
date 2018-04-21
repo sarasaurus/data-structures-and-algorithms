@@ -4,23 +4,32 @@
 const largest = module.exports = {};
 
 largest.largestProduct = (arr) => {
-  const greatest = 0;
+  let greatest = 0;
   let compare = 0;
+  let up = 0;
+  let down = 0;
+  let right = 0;
+  let current = 0;
 
-  for (let i = 0; i <= arr.length; i++) {
-    for (let j = 0; j <= arr[i].length; j++) {
-      const current = arr[i][j];
-      let up = arr[i + 1][j] * current;
-      let down = arr[i - 1][j] * current; 
-      
-      if (up !== null && up > down) { up = compare; } else if (down !== null) { down = compare; } console.log('poop'); 
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      current = arr[i][j];
+      if (j + 1 < arr[i].length) {
+        right = arr[i][j + 1] * current;
+      }
+      if (i - 1 >= 0) {
+        up = arr[i - 1][j] * current;
+      } 
+      if (i + 1 < arr.length) {
+        down = arr[i + 1][j] * current;
+      } 
+      const val = Math.max(up, down, right);
+      if (val > compare) {
+        compare = val;
+      }
     }
-
-    if (compare > greatest) {
-      compare = greatest;
-    } else { console.log('nothing'); }
+    greatest = Math.max(greatest, compare);
   }
-
+ 
   return greatest;
 };
-
