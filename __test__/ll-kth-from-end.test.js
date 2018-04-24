@@ -9,7 +9,7 @@ describe('ll_kth_from_end.js', () => {
     testList.append(3);
     testList.append(8);
     testList.append(2);
-    console.log('testlist!', testList)
+    console.log('testlist!', testList);
     expect(testList.kthFromEnd(0).value).toEqual(2);
   });
   test('#k = 2', () => {
@@ -26,6 +26,6 @@ describe('ll_kth_from_end.js', () => {
     testList.append(3);
     testList.append(8);
     testList.append(2);
-    expect(testList.kthFromEnd(6)).toEqual('exception');
+    expect(() => { testList.kthFromEnd(6); }).toThrowError('exception');
   });
 });

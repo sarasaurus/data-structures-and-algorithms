@@ -10,6 +10,7 @@ module.exports = class LinkedList {
     let currentNode;
     if (!this.head) {
       this.head = new Node(value);
+      return this;
     } 
     currentNode = this.head;
     while (currentNode.next) {
@@ -23,23 +24,21 @@ module.exports = class LinkedList {
     if (this.head !== null) {
       let counter = 0;
       let currentNode = this.head;
-      let traverseListForK = 0;
       while (currentNode.next) {
         currentNode = currentNode.next;
         counter += 1;
       }// while
-      traverseListForK = counter + 1;
-      console.log('counter plus 1: ', traverseListForK);
-      if (traverseListForK - k) {
+      console.log('counter plus 1: ', counter);
+      if (counter - k >= 0) {
         currentNode = this.head;
-        for (let i = 0; i <= traverseListForK; i++) {
+        for (let i = 0; i <= counter - k - 1; i++) {
           currentNode = currentNode.next;
-          console.log('counter after the loop', traverseListForK - k);
-          return currentNode;
+          console.log('counter after the loop', counter - k);
         }// for
+        return currentNode;
       }// if traverse doesnt exist:
-      return 'exception';
+      throw new Error('exception');
     }// if head doesnt exist:
-    return 'exception';
+    throw new Error('exception');
   }
 };// module
