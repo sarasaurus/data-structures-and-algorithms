@@ -4,6 +4,7 @@ Write the following methods for the Linked List class:
 __.append(value)__ which adds a new node with the given value to the end of the list
 __.insertBefore(value, newVal)__ which add a new node with the given newValue immediately before the first value node
 __.insertAfter(value, newVal)__ which add a new node with the given newValue immediately after the first value node
+
 You have access to the Node class and all the properties on the Linked List class.
 
 ## Examples: 
@@ -31,6 +32,10 @@ head -> [1] -> [3] -> [2] -> X	4, 5	Exception
 
 
 ## Checklist
-- [x] don't use built-in methods
 - [x] write 3 tests using jest
-- [x] ensure tests are passing
+- [] ensure tests are passing
+
+## Big O
+for all methods 
+Big O of Time = BigO(N), where N = length of the linked list the method is applied to
+Big O of Space =BigO(1), nothing new is created, unless the input where to be huge
