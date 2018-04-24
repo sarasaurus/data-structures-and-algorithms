@@ -3,6 +3,9 @@
 const Node = require('./node');
 
 module.exports = class LinkedList {
+  constructor() {
+    this.head = null;
+  }
   append(value) {
     let currentNode;
     if (!this.head) {
@@ -23,13 +26,15 @@ module.exports = class LinkedList {
       let traverseListForK = 0;
       while (currentNode.next) {
         currentNode = currentNode.next;
-        counter++;
+        counter += 1;
       }// while
-      traverseListForK = counter + 2;
+      traverseListForK = counter + 1;
+      console.log('counter plus 1: ', traverseListForK);
       if (traverseListForK - k) {
         currentNode = this.head;
         for (let i = 0; i <= traverseListForK; i++) {
           currentNode = currentNode.next;
+          console.log('counter after the loop', traverseListForK - k);
           return currentNode;
         }// for
       }// if traverse doesnt exist:
