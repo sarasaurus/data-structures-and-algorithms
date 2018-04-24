@@ -3,18 +3,19 @@
 const Node = require('./node');
 
 module.exports = class LinkedList {
-  constructor() {
-    this.head = null;
-  }// c
   append(value) {
-    let currentNode = this.head;
-    const newNode = new Node(value);
+    let currentNode;
+    if (!this.head) {
+      this.head = new Node(value);
+    } 
+    currentNode = this.head;
     while (currentNode.next) {
       currentNode = currentNode.next;
     } 
-    currentNode.next = newNode;
+    currentNode.next = new Node(value);
     return this;
   }// append
+
   kthFromEnd(k) {
     if (this.head !== null) {
       let counter = 0;
@@ -22,9 +23,9 @@ module.exports = class LinkedList {
       let traverseListForK = 0;
       while (currentNode.next) {
         currentNode = currentNode.next;
-        counter ++;
+        counter++;
       }// while
-      traverseListForK = counter + 1;
+      traverseListForK = counter + 2;
       if (traverseListForK - k) {
         currentNode = this.head;
         for (let i = 0; i <= traverseListForK; i++) {

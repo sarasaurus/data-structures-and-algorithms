@@ -3,10 +3,6 @@
 const LinkedList = require('../ll_kth_from_end');
 
 describe('ll_kth_from_end.js', () => {
-  test('#constructor', () => {
-    const testList = new LinkedList();
-    expect(testList.head).toBeNull();
-  });
   test('#k = 0', () => {
     const testList = new LinkedList();
     testList.append(1);
