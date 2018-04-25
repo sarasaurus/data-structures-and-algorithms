@@ -7,14 +7,18 @@ module.exports = class LinkedList {
     this.head = null;
   }
   append(value) {
-    let currentNode = this.head;
-    const newNode = new Node(value);
+    let currentNode;
+    if (!this.head) {
+      this.head = new Node(value);
+      return this;
+    } 
+    currentNode = this.head;
     while (currentNode.next) {
       currentNode = currentNode.next;
     } 
-    currentNode.next = newNode;
+    currentNode.next = new Node(value);
     return this;
-  }
+  }// append
 
   insertBefore(value, newValue) {
     const newNode = new Node(newValue);

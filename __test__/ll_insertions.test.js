@@ -19,6 +19,7 @@ describe('ll_insertions.js', () => {
     testList.append(1);
     testList.append(2);
     testList.append(3);
+    //expect(testList.insertBefore(2, 5)).toEqual([1, 5, 2, 3]);
     testList.insertBefore(2, 5);
     expect(testList.head.next.value).toEqual(5);
     expect(testList.head.next.next.value).toEqual(2);
@@ -28,9 +29,9 @@ describe('ll_insertions.js', () => {
     testList.append(1);
     testList.append(2);
     testList.append(3);
+    //expect(testList.insertBefore(2, 5)).toEqual([1, 5, 2, 3]);
     testList.insertAfter(2, 5);
     expect(testList.head.next.value).toEqual(2);
     expect(testList.head.next.next.value).toEqual(5);
-    expect(testList.head.next.next.next.value).toEqual(3);
   });
 });
