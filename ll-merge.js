@@ -1,61 +1,45 @@
 'use strict';
 
 const Node = require('./node');
+const LinkedList = require('./ll_kth_from_end');
+const merge = module.exports = {function (testListA, testListB);};
 
-module.exports = class LinkedList {
-  constructor() {
-    this.head = null;
+const testListA = new LinkedList();
+const testListB = new LinkedList();
+const testListC = new LinkedList();
+testListA.append(1);
+testListA.append(3);
+testListA.append(2);
+testListB.append(5);
+testListB.append(9);
+testListB.append(4);
+testListC.append(11);
+testListC.append(12);
+console.log('testlist A!', testListA);
+console.log('testlist B!', testListB);
+console.log('testlist C!', testListC);
+
+merge.mergeLists = (listA, listB) => {
+  const currentNode = listA.head;
+  console.log('currnode to listA IS: ', currentNode.value);
+  let cacheA = currentNode.next.next;
+  console.log('cahceA IS: ', currentNode.next.value);
+  let cacheB = listB.head;
+  console.log('cacheB IS: ', cacheB.value);
+  console.log('outta loop currNode IS: ', currentNode);
+
+  listA.head.next = cacheB;
+  console.log('after reassign to b listA.head.next IS: ', listA.head.next.value);
+
+  while (currentNode.next) {
+    // if (currentNode.next.next) {
+    //   currentNode.next = cacheB;
+    //   cacheB = cacheB.next.next;
+    //   //cacheB.next = currentNode.next.next;
+    //   console.log('in and after loop', currentNode);
+    // }
+    //currentNode.next = cacheB;
   }
-  append(value) {
-    let currentNode;
-    if (!this.head) {
-      this.head = new Node(value);
-      return this;
-    } 
-    currentNode = this.head;
-    while (currentNode.next) {
-      currentNode = currentNode.next;
-    } 
-    currentNode.next = new Node(value);
-    return this;
-  }// append
+  return this;
+};
 
-  //   kthFromEnd(k) {
-  //     if (this.head !== null) {
-  //       let counter = 0;
-  //       let currentNode = this.head;
-  //       while (currentNode.next) {
-  //         currentNode = currentNode.next;
-  //         counter += 1;
-  //       }// while
-  //       console.log('counter plus 1: ', counter);
-  //       if (counter - k >= 0) {
-  //         currentNode = this.head;
-  //         for (let i = 0; i <= counter - k - 1; i++) {
-  //           currentNode = currentNode.next;
-  //           console.log('counter after the loop', counter - k);
-  //         }// for
-  //         return currentNode;
-  //       }// if traverse doesnt exist:
-  //       throw new Error('exception');
-  //     }// if head doesnt exist:
-  //     throw new Error('exception');
-  //   }
-
-  mergeLists(listA, listB) {
-  
-   let currentNode = listA.head;
-    // let cacheA=currentNode.next.next;
-    let cacheB = listB.head;
-    listA.head.next = cacheB;
-    while (currentNode.next) {
-      if (currentNode.next.next) {
-        currentNode.next = cacheB;
-        cacheB = cacheB.next.next;
-        cacheB.next = currentNode.next.next;
-      }
-      // return what?
-    }
-    return listA;
-  }
-};// module
