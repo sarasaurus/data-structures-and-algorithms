@@ -3,6 +3,7 @@
 const LinkedList = require('../ll_kth_from_end');
 
 const merge = require('../ll-merge');
+const util = require('util');
 
 describe('ll-merge.js', () => {
   const testListA = new LinkedList();
@@ -19,16 +20,17 @@ describe('ll-merge.js', () => {
   console.log('testlist A!', testListA);
   console.log('testlist B!', testListB);
   console.log('testlist C!', testListC);
-  test('list A and list B are Equal in Length', () => {
+  it('list A and list B are Equal in Length', () => {
     console.log('testlist A!', testListA);
     expect(merge.mergeLists(testListA, testListB).head.value).toEqual(1);
     expect(merge.mergeLists(testListA, testListB).head.next.value).toEqual(5);
   });
-  test('List A is shorter', () => {
+  it('List A is shorter', () => {
     expect(merge.mergeLists(testListC, testListB).head.value).toEqual(11);
     expect(merge.mergeLists(testListC, testListB).head.next.next.value).toEqual(12);
     expect(merge.mergeLists(testListC, testListB).head.next.next.next.value).toEqual(9);
     expect(merge.mergeLists(testListC, testListB).head.next.next.next.value).toEqual(4);
+    console.log();
   });
   test('List B is shorter', () => {
     expect(merge.mergeLists(testListC, testListB).head.value).toEqual(1);
