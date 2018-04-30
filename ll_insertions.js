@@ -57,7 +57,7 @@ module.exports = class LinkedList {
       while (currentNode.next) {
         currentNode = currentNode.next;
         if (currentNode.value === value) {
-          newNode.next = currentNode.next.next;
+          newNode.next = currentNode.next;
           currentNode.next = newNode;
           return this;
         } throw Error;
