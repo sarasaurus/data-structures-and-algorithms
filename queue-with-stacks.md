@@ -17,7 +17,8 @@ given: _[5]->[10]->[15]->[20]_	__Queueue.dequeue()__ should return: 20	and Queue
 given: _[5]->[10]->[15]_ __Queueue.dequeue()__ should return:	15	and Queue should be: [5]->[10]
 
 ## Solution
-![white board image](./assets/queue-with-stacks.jpg)
+![white board image](./assets/queue-with-stacks1.jpg)
+![white board image](./assets/queue-with-stacks2.jpg)
 
 
 ## Checklist
