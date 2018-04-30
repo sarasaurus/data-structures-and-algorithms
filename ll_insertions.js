@@ -6,13 +6,26 @@ module.exports = class LinkedList {
   constructor() {
     this.head = null;
   }
+  // append(value) {
+  //   let currentNode = this.head;
+  //   const newNode = new Node(value);
+  //   while (currentNode.next) {
+  //     currentNode = currentNode.next;
+  //   } 
+  //   currentNode.next = newNode;
+  //   return this;
+  // }
   append(value) {
-    let currentNode = this.head;
-    const newNode = new Node(value);
+    let currentNode;
+    if (!this.head) {
+      this.head = new Node(value);
+      return this;
+    } 
+    currentNode = this.head;
     while (currentNode.next) {
       currentNode = currentNode.next;
     } 
-    currentNode.next = newNode;
+    currentNode.next = new Node(value);
     return this;
   }
 

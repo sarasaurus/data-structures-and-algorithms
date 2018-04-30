@@ -7,7 +7,7 @@
     "lint": "eslint .",
     "test": "eslint . && jest --coverage",
     "testjest": "jest --coverage",
-    "inspect": "node inspect ll-merge.js"
+    "inspect": "node inspect ll-insertions.js"
   },
   "keywords": [],
   "author": "",
