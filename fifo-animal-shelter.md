@@ -6,11 +6,11 @@ __Implement the following methods:__
 
 ## Big O
 - enqueue
-    BigO of Space:
-    BigO of Time:
+    BigO of Space: 1 
+    BigO of Time: 1? whatever Big O is of the array methods I used?
 - dequeue
-    BigO of Space:
-    BigO if Time:
+    BigO of Space: 1
+    BigO if Time: 1? whatever the big O is of the array methods I used...?
 
 
 ## Solution
@@ -21,6 +21,7 @@ __Implement the following methods:__
 ## Checklist
 - [x] enque an animal adds an animal to the front of the animalShelter
 - [x] deque an animal returns the longest waiting dog or cat
-- [x] if no animal is specified, dequeue returns the longest waiting animal
 - [x] write 3 tests using jest
 - [x] ensure tests are passing
+- [x] Stretch Goal:
+        If a cat or dog isn’t preferred, return whichever animal has been waiting in the shelter the longest.

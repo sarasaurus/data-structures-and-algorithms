@@ -1,11 +1,11 @@
 'use strict';
 
-const animalShelter = require('../fifo-animal-shelter');
+const AnimalShelter = require('../fifo-animal-shelter');
 
 describe('FIFO Animal Shelter', () => {
   describe('# enqueue', () => {
     test('adding dogs and cats to the Shelter', () => {
-      const testShelter = new animalShelter();
+      const testShelter = new AnimalShelter();
       testShelter.enqueue('cat');
       testShelter.enqueue('dog');
       testShelter.enqueue('cat');
@@ -19,21 +19,19 @@ describe('FIFO Animal Shelter', () => {
 
   describe('#dequeue', () => {
     test('taking dogs and cats out of the shelter', () => {
-      const testShelter = new animalShelter();
+      const testShelter = new AnimalShelter();
       testShelter.enqueue('cat');
       testShelter.enqueue('dog');
       testShelter.enqueue('cat');
       testShelter.enqueue('dog');
       testShelter.dequeue('cat');
-      // testShelter.enqueue('dog');
-      // testShelter.enqueue('cat');
-      // testShelter.enqueue('dog');
+
       expect(testShelter.cats).toHaveLength(1);
       testShelter.dequeue('dog');
       expect(testShelter.dogs).toHaveLength(1);
     });
     test('taking unspecified out of shelter', () => {
-      const testShelter = new animalShelter();
+      const testShelter = new AnimalShelter();
       testShelter.enqueue('cat');
       testShelter.enqueue('dog');
       testShelter.enqueue('cat');
