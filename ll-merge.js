@@ -70,6 +70,7 @@ merge.mergeLists = (listA, listB) => {
     console.log('FROM THE FUNCTION listA is:', listA); 
     return listA;
   }
+
   return listA;
 };
 //merge.mergeLists(testListA, testListB);
