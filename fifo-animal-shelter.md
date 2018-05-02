@@ -7,10 +7,10 @@ __Implement the following methods:__
 ## Big O
 - enqueue
     BigO of Space: 1 
-    BigO of Time: 1? whatever Big O is of the array methods I used?
+    BigO of Time: is the BigO of .unshift JS array method
 - dequeue
     BigO of Space: 1
-    BigO if Time: 1? whatever the big O is of the array methods I used...?
+    BigO if Time: Big O of .pop and .splice JS array methods?
 
 
 ## Solution
