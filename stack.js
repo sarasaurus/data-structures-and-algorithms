@@ -11,4 +11,4 @@ module.exports = class Stack {
   pop() {
     return this.storage.pop();
   }
-}
+};
