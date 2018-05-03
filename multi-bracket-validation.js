@@ -1,44 +1,37 @@
 'use strict';
-let bracket = module.exports={};
+
+const bracket = module.exports = {};
 
 
 bracket.checkBrackets = (string) => {
-  let check = [];
-  let returnBool = true;
-  let backcheck = [];
-
+  const check = [];
+  const backcheck = [];
+  let tally = 0;
   for (let i = 0; i <= string.length; i++) {
     if (string[i] === '(') {
       check.push(')');
-    }
-    if (string[i] === '[') {
+    } else if (string[i] === '[') {
       check.push(']');
-    }
-    if (string[i] === '{') {
+    } else if (string[i] === '{') {
       check.push('}');
-    }
-    // -------------------------------
-    if (string[i] === ')') {
-      backcheck.push(')');
-    }
-    if (string[i] === ']') {
-      backcheck.push(']');
-    }
-    if (string[i] === '}') {
-      backcheck.push('}');
+    } else if (string[i] === '}' || string[i] === ']' || string[i] === ')') {
+      backcheck.push(string[i]);
     }
   }
   console.log(`check is ${check}, backcheck is ${backcheck}`);
-
-  if (!check.length === backcheck.length) {
-    return false;
+  
+  if (check.length === backcheck.length) {
+    tally = check.length;
+    for (let i = 0; i <= check.length; i++) {
+      const len = backcheck.length - i;
+      if (check[i] === backcheck[len]) {
+        tally--;
+      } 
+    }
+    if (tally === 0) {
+      return true;
+    }
   }
-  for (let i = 0; i <= check.length; i++) {
-    if (check[i] === backcheck[check.length - i]) {
-      returnBool = true;
-    } returnBool = false;
-  }
-  console.log('BOOLEAN IS: ', returnBool);
-  return returnBool;
+  return false;
 };
 // this is not working
