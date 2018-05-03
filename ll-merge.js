@@ -1,6 +1,6 @@
 'use strict';
 
-const Node = require('./node');
+const Node = require('./lib/node');
 const LinkedList = require('./ll_kth_from_end');
 const merge = module.exports = {};
 

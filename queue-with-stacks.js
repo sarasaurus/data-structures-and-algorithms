@@ -1,6 +1,6 @@
 'use strict';
 
-const Stack = require('./stack.js');
+const Stack = require('./lib/stack.js');
 
 module.exports = class myQueue {
   constructor() {
