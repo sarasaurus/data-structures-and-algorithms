@@ -1,6 +1,7 @@
 'use strict';
 
 import LinkedList from '../lib/linked-list';
+const util = require('util');
 
 describe('LINKED-LIST testing linked-list.js', () => {
   test('Insert At Head', () =>{
@@ -8,6 +9,7 @@ describe('LINKED-LIST testing linked-list.js', () => {
     testList.insertAtHead(1);
     testList.insertAtHead(2);
     testList.insertAtHead(3);
+    console.log('Insert at Head: ', util.inspect(testList));
     expect(testList.head.value).toEqual(3);
     expect(testList.tail.value).toEqual(1);
     expect(testList.length).toEqual(3);
@@ -17,6 +19,7 @@ describe('LINKED-LIST testing linked-list.js', () => {
     testList.insertAtTail(1);
     testList.insertAtTail(2);
     testList.insertAtTail(3);
+    console.log('Insert at Tail: ', util.inspect(testList));
     expect(testList.head.value).toEqual(1);
     expect(testList.tail.value).toEqual(3);
     expect(testList.length).toEqual(3);
@@ -27,6 +30,7 @@ describe('LINKED-LIST testing linked-list.js', () => {
     testList.insertAtTail(2);
     testList.insertAtTail(3);
     testList.removeFromHead();
+    console.log('Remove from Head: ', util.inspect(testList));
     expect(testList.head.value).toEqual(2);
     expect(testList.tail.value).toEqual(3);
     expect(testList.length).toEqual(2);
@@ -36,6 +40,8 @@ describe('LINKED-LIST testing linked-list.js', () => {
     testList.insertAtTail(1);
     testList.insertAtTail(2);
     testList.insertAtTail(3);
+    testList.removeFromTail();
+    console.log('Remove from Tail: ', util.inspect(testList));
     expect(testList.head.value).toEqual(1);
     expect(testList.tail.value).toEqual(2);
     expect(testList.length).toEqual(2);
