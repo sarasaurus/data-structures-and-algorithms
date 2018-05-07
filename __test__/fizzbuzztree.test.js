@@ -3,7 +3,7 @@
 import util from 'util';
 import Tree from '../lib/binary-tree';
 import Node from '../lib/tree-node';
-import fizzbuzz from '../fizzbuzz';
+import fizzBuzzTree from '../fizzbuzztree';
 
 let tree = null;
 
@@ -21,9 +21,9 @@ afterEach(() => {
   tree = null;
 });
 
-describe('testing fizz', () => {
+describe('testing fizzBuzzTree', () => {
   // let values = [];
-  test('should be fizz', () => {
+  test('value should be fizz', () => {
     one.left = two;
     one.right = three;
     three.left = four;
@@ -34,11 +34,11 @@ describe('testing fizz', () => {
     seven.right = nine;
     tree = new Tree(one);
     console.log('THE TREE: ', util.inspect(tree, { showHidden: true, depth: null }));
-    fizzbuzz(tree);
+    fizzBuzzTree(tree);
     console.log('THE TREE AFTER FIZZBUZZ: ', util.inspect(tree, { showHidden: true, depth: null }));
     expect(three.value).toEqual('fizz');
   });
-  test('should be buzz', () => {
+  test('value should be buzz', () => {
     one.left = two;
     one.right = three;
     three.left = four;
@@ -48,10 +48,10 @@ describe('testing fizz', () => {
     seven.left = eight;
     seven.right = nine;
     tree = new Tree(one);
-    fizzbuzz(tree);
+    fizzBuzzTree(tree);
     expect(four.value).toEqual('buzz');
   });
-  test('should be fizzbuzz', () => {
+  test('value should be fizzbuzz', () => {
     one.left = two;
     one.right = three;
     three.left = four;
@@ -61,10 +61,10 @@ describe('testing fizz', () => {
     seven.left = eight;
     seven.right = nine;
     tree = new Tree(one);
-    fizzbuzz(tree);
+    fizzBuzzTree(tree);
     expect(two.value).toEqual('fizzbuzz');
   });
-  test('should be unchanged', () => {
+  test('value should be unchanged', () => {
     one.left = two;
     one.right = three;
     three.left = four;
@@ -74,7 +74,7 @@ describe('testing fizz', () => {
     seven.left = eight;
     seven.right = nine;
     tree = new Tree(one);
-    fizzbuzz(tree);
+    fizzBuzzTree(tree);
     expect(seven.value).toEqual(7);
   });
 });

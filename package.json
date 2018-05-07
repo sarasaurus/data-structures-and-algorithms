@@ -8,7 +8,7 @@
     "test": "eslint . && jest --coverage",
     "testjest": "jest --coverage",
     "inspect": "node inspect ll-insertions.js",
-    "testone": "jest --coverage fizzbuzz.test.js"
+    "testone": "jest --coverage fizzbuzztree.test.js"
   },
   "keywords": [],
   "author": "",

@@ -1,6 +1,6 @@
 'use strict';
 
-const fizzbuzz = (tree) => {
+const fizzBuzzTree = (tree) => {
   if (!tree) {
     return new Error('no tree!');
   }
@@ -23,6 +23,6 @@ const fizzbuzz = (tree) => {
   traverseTree(rootNode);
 };
 
-export default fizzbuzz;
+export default fizzBuzzTree;
 
 // if interviewer says no matter order-- then use pre-order
