@@ -1,6 +1,6 @@
 'use strict';
 
-const Node = require('./node');
+const Node = require('./lib/node');
 
 module.exports = class LinkedList {
   constructor() {
