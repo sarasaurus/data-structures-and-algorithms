@@ -16,6 +16,8 @@ const six = new Node(6);
 const seven = new Node(7);
 const eight = new Node(8);
 const nine = new Node(9);
+const ten = new Node(10);
+const eleven = new Node(11);
 
 afterEach(() => {
   tree = null;
@@ -23,7 +25,7 @@ afterEach(() => {
 
 describe('testing breadth first traversal', () => {
   // let values = [];
-  test('value should be 1234', () => {
+  test('value should be 123645789', () => {
     one.left = two;
     one.right = three;
     three.left = four;
@@ -33,9 +35,30 @@ describe('testing breadth first traversal', () => {
     seven.left = eight;
     seven.right = nine;
     tree = new Tree(one);
-    console.log('THE TREE: ', util.inspect(tree, { showHidden: true, depth: null }));
-    let what = breadthFirst(tree);
-    console.log('WHAT', what);
+    expect(breadthFirst(tree)).toEqual('123645789');
   });
-  
+  test('value should be 11036457811', () => {
+    one.left = ten;
+    one.right = three;
+    three.left = four;
+    three.right = five;
+    ten.left = six;
+    six.right = seven;
+    seven.left = eight;
+    seven.right = eleven;
+    tree = new Tree(one);
+    expect(breadthFirst(tree)).toEqual('11036457811');
+  });
+  // test('value should be 11036457811', () => {
+  //   one.left = ten;
+  //   one.right = three;
+  //   three.left = four;
+  //   three.right = five;
+  //   ten.left = six;
+  //   six.right = seven;
+  //   seven.left = eight;
+  //   seven.right = eleven;
+  //   tree = new Tree(one);
+  //   expect(breadthFirst(tree)).toEqual('11036457811');
+  // });
 });

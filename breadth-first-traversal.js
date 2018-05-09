@@ -4,16 +4,23 @@
 const Q = [];
 
 const breadthFirst = (tree) => {
-  const values = [];
+  if (!tree) {
+    throw new Error('no tree!');
+  }
+  let values = '';
   Q.push(tree.root);
   console.log('QUEUE', Q);
   while (Q.length > 0) {
     const curr = Q.shift();
     if (curr.value) { 
-      values.push(curr.value);
+      values += curr.value;
       console.log('curr value', curr.value); 
-      Q.push(curr.left);
-      Q.push(curr.right);
+      if (curr.left) {
+        Q.push(curr.left);
+      }
+      if (curr.right) {
+        Q.push(curr.right);
+      }
       console.log('QUEUE', Q);
     }
   }
