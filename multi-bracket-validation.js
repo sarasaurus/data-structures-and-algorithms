@@ -22,9 +22,11 @@ bracket.checkBrackets = (string) => {
   
   if (check.length === backcheck.length) {
     tally = check.length;
-    for (let i = 0; i <= check.length; i++) {
-      const len = backcheck.length - i;
+    for (let i = 0; i < check.length; i++) {
+      const len = backcheck.length - 1 - i;
+      console.log(`check at i: ${check[i]}, backcheck val: ${backcheck[len]}`);
       if (check[i] === backcheck[len]) {
+        console.log(`TALLY IS: ${tally}, I is: ${i}`);
         tally--;
       } 
     }
