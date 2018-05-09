@@ -8,7 +8,7 @@
     "test": "eslint . && jest --coverage",
     "testjest": "jest --coverage",
     "inspect": "node inspect ll-insertions.js",
-    "testone": "jest --coverage breadth-first-traversal.test.js"
+    "testone": "jest --coverage find-maximum-value.test.js"
   },
   "keywords": [],
   "author": "",
