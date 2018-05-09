@@ -1,6 +1,5 @@
 'use strict';
 
-import util from 'util';
 import Tree from '../lib/binary-tree';
 import Node from '../lib/tree-node';
 import breadthFirst from '../breadth-first-traversal';
@@ -51,6 +50,6 @@ describe('testing breadth first traversal', () => {
   });
   test('should return error', () => {
     tree = null;
-    expect(breadthFirst(tree)).toThrowError('no tree!');
+    expect(breadthFirst(tree)).toThrowError();
   });
 });
