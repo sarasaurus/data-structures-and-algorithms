@@ -49,16 +49,8 @@ describe('testing breadth first traversal', () => {
     tree = new Tree(one);
     expect(breadthFirst(tree)).toEqual('11036457811');
   });
-  // test('value should be 11036457811', () => {
-  //   one.left = ten;
-  //   one.right = three;
-  //   three.left = four;
-  //   three.right = five;
-  //   ten.left = six;
-  //   six.right = seven;
-  //   seven.left = eight;
-  //   seven.right = eleven;
-  //   tree = new Tree(one);
-  //   expect(breadthFirst(tree)).toEqual('11036457811');
-  // });
+  test('should return error', () => {
+    tree = null;
+    expect(breadthFirst(tree)).toThrowError('no tree!');
+  });
 });
