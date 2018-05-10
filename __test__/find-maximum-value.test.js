@@ -17,6 +17,7 @@ const eight = new Node(8);
 const nine = new Node(9);
 const ten = new Node(10);
 const eleven = new Node(11);
+const neg = new Node(-20);
 
 afterEach(() => {
   tree = null;
@@ -48,8 +49,16 @@ describe('testing find max value', () => {
     tree = new Tree(one);
     expect(findMaxVal(tree)).toEqual(11);
   });
-  // test('should return error', () => {
-  //   tree = null;
-  //   expect(findMaxVal(tree)).toThrowError();
-  // });
+  test('value should handle negative numbers, value should be 11', () => {
+    one.left = ten;
+    one.right = three;
+    three.left = four;
+    three.right = five;
+    ten.left = neg;
+    neg.right = seven;
+    seven.left = eight;
+    seven.right = eleven;
+    tree = new Tree(one);
+    expect(findMaxVal(tree)).toEqual(11);
+  });
 });

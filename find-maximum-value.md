@@ -10,7 +10,12 @@ the function should return: '6'
 given a tree:  ___555\_\_\_\_  
 _____________ 2 __ 3\_\_\_\_    
 __________4__5 __\___68\_\_\_\_\_\_
-the function should return: '555'    
+the function should return: '555'  
+
+given a tree:  ___- 75\_\_\_\_  
+_____________ 2 __ 3\_\_\_\_    
+__________- 4__5 __\___68\_\_\_\_\_\_
+the function should return: '68'   
 
 
 ## BigO

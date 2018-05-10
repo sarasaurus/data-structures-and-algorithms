@@ -1,8 +1,8 @@
 'use strict';
 
 const findMaxVal = (tree) => {
-  let max = null; // can set to null or root.value or -infinity
-  const traverse = (node) => {
+  let max = null;
+  const traverse = (node) => { // eslint-disable-line
     if (!node) {
       return undefined;
     }
