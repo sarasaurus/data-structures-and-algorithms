@@ -29,9 +29,9 @@ Assuming a queue implemented in the most efficient manner (using a linked list):
 
 
 ## Checklist
-- [x] clean reusable code
-- [x] write 3 tests using jest
-- [x] ensure tests are passing
+- [ ] clean reusable code
+- [ ] write 3 tests using jest
+- [ ] ensure tests are passing
 - [x] takes a tree as an argument
 
 
