@@ -6,14 +6,8 @@ const printLevelOrder = (tree) => {
   if (!tree.root) {
     return null;
   }
-    const _printLevelOrder = (root, i) => { // eslint-disable-line
+    const _breadthFirstSearch = (root) => { // eslint-disable-line
     let printString = '';
-    h= height(root);
-  for (let i =1; i<=h; i++){
-    printGivenLevel(root, i);
-  }
-}
-  const printGivenLevel = (root, level) {
     const queue = new Queue();
     queue.enqueue(root);
     let current = null;
@@ -22,10 +16,11 @@ const printLevelOrder = (tree) => {
       // this will be replaced with another operation. 
       // console.log(`Visiting ${current.value}`);
       // callback(current.value);
-      printString += current.value;
+      printString += current.value.toString();
       for (let i = 0; i < current.children.length; i++) {
         queue.enqueue(current.children[i]);
-        if (i === current.children.length - 1) {
+        if (i === current.children.length) {
+          queue.enque('\n');
         }
       }
       // queue.enqueue('\n');
