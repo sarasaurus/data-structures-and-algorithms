@@ -1,8 +1,10 @@
 'use strict';
+import KAryNode from '../lib/k-ary-node';
+import KAryTree from'../lib/k-ary-tree';
+import printLevelOrder from '../print_level_order';
 
-describe('Testing K-Ary-Tree methods', () => {
+describe('Testing print level order ', () => {
   describe('testing toString method', () => {
-
     test('value should be 12364578', () => {
       const one = new KAryNode(1);
       one.appendChild(2);
@@ -16,7 +18,7 @@ describe('Testing K-Ary-Tree methods', () => {
       one.children[1].children[1].appendChild(8);
       
       const kAryTree = new KAryTree(one);
-      expect(kAryTree.toString()).toEqual('1\n2\n3\n4\n5\n6\n7\n8\n');
+      expect(printLevelOrder(kAryTree)).toEqual('1\n234\n567\n8\n');
     });
   });
 });
