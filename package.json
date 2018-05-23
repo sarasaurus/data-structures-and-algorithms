@@ -8,12 +8,13 @@
     "test": "eslint . && jest --coverage",
     "testjest": "jest --coverage",
     "inspect": "node inspect ll-insertions.js",
-    "testone": "jest --coverage find-maximum-value.test.js"
+    "testone": "jest --coverage print_level_order.test.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "queue-fifo": "^0.2.4",
     "babel-eslint": "^8.2.3",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
