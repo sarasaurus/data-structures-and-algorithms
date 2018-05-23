@@ -8,22 +8,21 @@ const printLevelOrder = (tree) => {
   }
     const _breadthFirstSearch = (root) => { // eslint-disable-line
     let printString = '';
+    let level = 0;
     const queue = new Queue();
     queue.enqueue(root);
     let current = null;
     while (!queue.isEmpty()) {
       current = queue.dequeue();
-      // this will be replaced with another operation. 
-      // console.log(`Visiting ${current.value}`);
-      // callback(current.value);
-      printString += current.value.toString();
+      printString += current.value;
+     
       for (let i = 0; i < current.children.length; i++) {
         queue.enqueue(current.children[i]);
-        if (i === current.children.length) {
-          queue.enque('\n');
-        }
       }
-      // queue.enqueue('\n');
+    }
+    while (queue.isEmpty()){
+      level += 1;
+      console.log(level);
     }
     return printString;
   };

@@ -25,7 +25,7 @@ Assuming a queue implemented in the most efficient manner (using a linked list):
 - _Space:_ O of 1 -- in the sense that at no point would our queue ever exceed the input itself, in a binary tree the queue would at most, be 3 nodes at any given time 
 
 ## Solution
-![white board image](./assets/print-level-order.jpg)
+![white board image](./assets/print_level_order.JPG)
 
 
 ## Checklist
