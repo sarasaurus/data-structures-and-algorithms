@@ -24,7 +24,7 @@ describe('LINKED-LIST testing linked-list.js', () => {
     expect(testList.tail.value).toEqual(3);
     expect(testList.length).toEqual(3);
   });
-  test.only('Remove from Head', () => {
+  test('Remove from Head', () => {
     const testList = new LinkedList();
     testList.insertAtTail(1);
     testList.insertAtTail(2);

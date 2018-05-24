@@ -20,7 +20,7 @@ describe('Testing find matches ', () => {
       
       const kAryTree = new KAryTree(one);
       console.log('whats up', findMatches(kAryTree, 3));
-      // expect(findMatches(kAryTree, 3));
+      expect(findMatches(kAryTree, 3).length).toEqual(3);
     });
   });
 });

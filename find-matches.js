@@ -3,27 +3,34 @@
 import Queue from 'queue-fifo';
 import LinkedList from './lib/linked-list';
 
-const findMatches = (tree, value) => {
+const findMatches = (treeInput, valueInput) => {
   const storage = new LinkedList();
-  if (!tree.root) {
-    console.log('whats happening', storage);
-    return storage;
-  }
-    const _findMatches = (root, searchValue) => { // eslint-disable-line
-    const queue = new Queue();
-    queue.enqueue(root);
-    let current = null;
-    while (!queue.isEmpty()) {
-      current = queue.dequeue();
-      if (current.value === searchValue) {
-        storage.enqueue(current);
-      }
-      for (let i = 0; i < current.children.length; i++) {
-        queue.enqueue(current.children[i]);
-      }
+  const _returnMatches = (tree, value) => { // eslint-disable-line
+
+    if (!tree.root) {
+      return undefined;
     }
+      const _findMatches = (root, searchValue) => { // eslint-disable-line
+      const queue = new Queue();
+      queue.enqueue(root);
+      let current = null;
+      while (!queue.isEmpty()) {
+        current = queue.dequeue();
+        // console.log('whats happening', current.value);
+        // console.log(searchValue, 'searchValue')
+        if (current.value === searchValue) {
+          storage.insertAtHead(current);
+          console.log('whats happening', storage);
+        }
+        for (let i = 0; i < current.children.length; i++) {
+          queue.enqueue(current.children[i]);
+        }
+      }
+    };
+    return _findMatches(tree.root, value);
   };
-  return _findMatches(tree.root);
+  _returnMatches(treeInput, valueInput);
+  return storage;
 };
 
 export default findMatches;
