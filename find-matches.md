@@ -4,25 +4,35 @@ Return a collection of all the nodes from within the tree that match the provide
 Avoid utilizing any of the built-in methods available to your language.
 
 ## Examples
-given a tree:  ___1\_\_\_\_  
+1. given a value: 3  
+given a tree:  
+_______________1\_\_\_\_  
 ____________ 3 __ 3\_\_\_\_    
-__________4__5 __\_6\_\_\_\_\_\_
-the function should return: 
-a linked list of the 2 nodes with the value 3  
+__________4__5 __\_6\_\_\_\_\_\_  
+the function should return:   
+a linked list with length 2, and node.values containing the nodes from the given tree  
 
-given a tree:  ___B\_\_\_\_  
+2. given a value: B  
+given a tree:  
+________________B\_\_\_\_  
 _____________ 2 __ 3\_\_\_\_    
-__________4__B __\___B\_\_\_\_\_\_
-the function should return: 
-a linked list of the 3 nodes with a value of B
+__________4__B __\___B\_\_\_\_\_\_  
+the function should return:   
+a linked list with length 3, and node.values containing the nodes from the given tree  
+3.  given a value: 7  
+given a tree:  
+________________B\_\_\_\_  
+_____________ 2 __ 3\_\_\_\_    
+__________4__B __\___B\_\_\_\_\_\_  
+the function should return:   
+a linked list with length = null
 
-
-## BigO
+## Time and Space Complexity Analysis
 Assuming a queue implemented in the most efficient manner (using a linked list)
 And the collection to return implimented as linked-list which inserts nodes in O(1) time and space
 
-- _Time:_ O of N, where N is the number of nodes in the tree
-- _Space:_ O of N where N represents the cost of traversal and so is the width or height of the tree, whichever is more significant, 
+- _Time:_ __BigO (N)__, where N is the number of nodes in the tree
+- _Space:_ __BigO (N)__, where N represents the cost of traversal and so is the width or height of the tree, whichever is more significant, 
 
 ## Solution
 ![white board image](./assets/find-matches.JPG)
