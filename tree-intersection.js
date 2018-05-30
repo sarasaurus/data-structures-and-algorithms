@@ -1,34 +1,39 @@
 'use strict';
+
 import BinaryTree from './lib/binary-tree';
 
 const findIntersection = (a, b) => {
   const map = new Map();
   const output = [];
-  _traverse(root, cb) {
-    while(root){
-      _traverse(root.left);
-      _traverse(root.right);
-      cb(root.value);
+  const _traverse = (root, cb) => { //eslint-disable-line
+    if (!root) {
+      return undefined;
     }
-  }
-  _createMap (val) {
-    if(!map.get(val)){
-      map.set(val: true)
+    _traverse(root.left, cb);
+    _traverse(root.right, cb);
+    cb(root.value);
+  };
+
+  const _createMap = (val) => { //eslint-disable-line
+    if (!map.get(val)) {
+      return map.set(val, true);
+    } 
+  };
+
+  const _checkValue = (val) => { //eslint-disable-line
+    if (map.get(val)) {
+      return output.push(val);
     }
-  }
-  _checkValue (val) {
-    if(!map.get(val)){
-      output.push(val);
-    }
-  }
-  a._traverse(this.root, _createMap);
-  b._travers(this.root, _checkValue);
+  };
+
+  _traverse(a.root, _createMap);
+  _traverse(b.root, _checkValue);
   return output;
-}
+};
 export default findIntersection;
 
 
-/// build hashmap based on treeA
+// / build hashmap based on treeA
 // push all values in a, as keys with value true
 // map.set(nodeVal: true);
 // then traverse treeB and check if each nodeval is in the map

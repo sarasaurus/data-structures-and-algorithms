@@ -24,6 +24,7 @@ describe('testing tree-intersection', () => {
   three.left = four;
   three.right = five;
   two.left = six;
+  two.right = six;
 
   a.left = b;
   a.right = c;
@@ -35,6 +36,6 @@ describe('testing tree-intersection', () => {
   const treeB = new BinaryTree(a);
 
   test('it should return an array of [1, 2, 3]', () => {
-    expect(findIntersection(treeA, treeB)).toContain([1, 2, 3]);
+    expect(findIntersection(treeA, treeB)).toEqual([1, 2, 3]);
   });
 });
