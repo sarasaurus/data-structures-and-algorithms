@@ -14,10 +14,16 @@ Without utilizing any of the built-in library methods available to your language
 
 
 ## Checklist
-- [ ] clean reusable code
-- [ ] write 3 tests using jest
-- [ ] ensure tests are passing
-- [x] takes a tree as an argument
+- [x] clean reusable code
+- [x] write 3 tests using jest
+- [x] ensure tests are passing
+- [x] takes a lengthy string as an argument
+
+## Stretch Goals
+- [x] Modify your function to return a count of each of the words in the provided string  
+    -  [x] tests passing  
+- [x] Modify your function to return a list of the words most frequently used in the provided string
+  - [ ] tests passing
 
 
 
