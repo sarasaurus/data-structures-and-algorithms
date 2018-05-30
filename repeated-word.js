@@ -4,19 +4,21 @@ const repeatedWord = (string) => {
   const stringMap = new Map();
   const splitString = string.toLowerCase().split(/\s*\W/gm);
   // console.log(splitString);
-  return splitString.map((ele) => {
-    if (ele !== '') {
-      if (stringMap.get(ele)) {
-        console.log('RETURN: ', ele);
-        return ele;
-      } stringMap.set(ele, ele);
+  for (let i = 0; i < splitString.length; i++) {
+    if (splitString[i] !== '') {
+      if (stringMap.get(splitString[i])) {
+        console.log('RETURN: ', splitString[i]);
+        return splitString[i];
+      } stringMap.set(splitString[i], splitString[i]);
     }
     // console.log('RETURN2: ', ele);
     // return ele;
-  });
+  }
+};
+
   
   // return stringMap.get();
-};
+
 
 export default repeatedWord;
 

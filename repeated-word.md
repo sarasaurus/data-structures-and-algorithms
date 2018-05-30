@@ -14,10 +14,10 @@ Without utilizing any of the built-in library methods available to your language
 
 
 ## Checklist
-- [ ] clean reusable code
+- [x] clean reusable code
 - [ ] write 3 tests using jest
 - [ ] ensure tests are passing
-- [x] takes a tree as an argument
+- [ ] takes a string as an argument
 
 
 
