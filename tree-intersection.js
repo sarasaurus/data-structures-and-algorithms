@@ -1,14 +1,31 @@
-findIntersection(a, b) {
+'use strict';
+import BinaryTree from './lib/binary-tree';
+
+const findIntersection = (a, b) => {
   const map = new Map();
-  _checkFunction (val) {
+  const output = [];
+  _traverse(root, cb) {
+    while(root){
+      _traverse(root.left);
+      _traverse(root.right);
+      cb(root.value);
+    }
+  }
+  _createMap (val) {
     if(!map.get(val)){
       map.set(val: true)
     }
   }
-  a.traverse(this.root, _checkFunction);
-  b.travers(this.root, _checkFunction);
-  return map;
+  _checkValue (val) {
+    if(!map.get(val)){
+      output.push(val);
+    }
+  }
+  a._traverse(this.root, _createMap);
+  b._travers(this.root, _checkValue);
+  return output;
 }
+export default findIntersection;
 
 
 /// build hashmap based on treeA
@@ -22,3 +39,6 @@ findIntersection(a, b) {
 // be cautious with number: number-- becasue if you have 0: 0--> it would evaluate to false becasue 0 is false
 
 // ES 6 set is like a map but values must be unique
+
+// object in js IS a hashmap basically, just more limited
+// hasmap is like a JS object, but where keys can be anything
