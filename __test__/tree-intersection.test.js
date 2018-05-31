@@ -43,7 +43,7 @@ describe('testing tree-intersection simple', () => {
   const treeB = new BinaryTree(a);
   logFullObject(treeA, 'treeA');
   logFullObject(treeB, 'treeB');
-  test('it should return an array of [1, 2, 3]', () => {
+  test.only('it should return an array of [1, 2, 3]', () => {
     expect(findIntersection(treeA, treeB)).toEqual([1, 2, 3]);
   });
 });
