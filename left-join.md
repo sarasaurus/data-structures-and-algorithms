@@ -1,0 +1,43 @@
+## Left-Join
+Write a function that LEFT JOINs two hashmaps into a single data structure.
+The first parameter is a hashmap that has word strings as keys, and a synonym of the key as values.
+The second parameter is a hashmap that has word strings as keys, and antonyms of the key as values.
+Combine the key and corresponding values (if they exist) into a new data structure according to LEFT JOIN logic.
+LEFT JOIN means all the values in the first hashmap are returned, and if values exist in the “right” hashmap, they are appended to the result row. If no values exist in the right hashmap, then some flavor of NULL should be appended to the result row.
+The returned data structure that holds the results is up to you. It doesn’t need to exactly match the output below, so long as it achieves the LEFT JOIN logic.
+Avoid utilizing any of the library methods available to your language.
+
+## Example 
+__Synonyms:__
+  fond: 'enamored',
+  wrath: 'anger',
+  diligent: 'employed',
+  outfit: 'garb',
+  guide: 'usher',
+
+__Antonyms:__
+  fond: 'averse',
+  wrath: 'delight',
+  diligent: 'idle',
+  flow: 'jam',
+  guide: 'follow',
+
+  __Output:__
+  fond: 'enamored',
+  wrath: 'anger',
+  diligent: 'employed',
+  outfit: 'garb', 'null',
+  guide: 'usher',
+
+
+## Solution
+![white board image](./assets/left-join.JPG)
+
+
+## Checklist
+- [x] clean reusable code
+- [x] write 3 tests using jest
+- [x] ensure tests are passing
+
+
+
