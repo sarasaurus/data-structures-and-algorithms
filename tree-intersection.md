@@ -23,14 +23,15 @@ the function should return: [2, 3, 6]
 - _Time:_ O of N, where N is the number of nodes in the largest tree
 - _Space:_ O of N, where N is the height of the largest tree / the number of intersections whichever is greater
 ## Solution
-![white board image](./assets/tree-intersection.JPG)
+![white board image](./assets/tree-intersection1.JPG)
+![white board image](./assets/tree-intersection2.JPG)
 
 
 ## Checklist
-- [ ] clean reusable code
+- [x] clean reusable code
 - [ ] write 3 tests using jest
-- [ ] ensure tests are passing
-- [ ] takes a lengthy string as an argument
+- [x] ensure tests are passing
+- [x] takes a lengthy string as an argument
 
 ## Stretch Goals
 - [ ] Presume you are working with BSTs. How can you improve the performance of your algorithm?
