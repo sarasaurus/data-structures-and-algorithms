@@ -1,7 +1,9 @@
 'use strict';
 
 const mergesort = (arr) => {// ?
-  if (arr.length < 2) {
+  if (!arr.length) {
+    return 'invalid input';
+  } else if (arr.length < 2) {
     return arr;
   }
   const len = arr.length; // ?
@@ -11,10 +13,16 @@ const mergesort = (arr) => {// ?
 
   const merge = (leftSort, rightSort) => {
     const result = [];
-    while (leftSort.length && rightSort.length ) {
+    while (leftSort.length && rightSort.length) {
       if (leftSort[0] <= rightSort[0]) {
+        if (typeof leftSort.shift !== 'function') {
+          return 'invalid input';
+        }
         result.push(leftSort.shift());
       } else {
+        if (typeof rightSort.shift !== 'function') {
+          return 'invalid input';
+        }
         result.push(rightSort.shift());// ?
       }
     }
@@ -29,7 +37,7 @@ const mergesort = (arr) => {// ?
   return merge(mergesort(left), mergesort(right));// ?
 };
 const test = [4, 7, 2, 1, 10, 78, 3, 45, 0, 50];
-const poop = mergesort(test);
+const poop = mergesort('poop'); // ?
 console.log(poop);
-// export default mergesort;
+export default mergesort;
 
