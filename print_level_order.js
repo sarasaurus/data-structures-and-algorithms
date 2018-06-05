@@ -2,7 +2,7 @@
 
 import Queue from 'queue-fifo';
 
-const printLevelOrder = (tree) => {
+const printLevelOrder = (tree) => { 
   if (!tree.root) {
     return null;
   }
