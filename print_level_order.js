@@ -1,6 +1,8 @@
 'use strict';
 
 import Queue from 'queue-fifo';
+import KAryNode from './lib/k-ary-node';
+import KAryTree from './lib/k-ary-tree';
 
 const printLevelOrder = (tree) => { 
   if (!tree.root) {
@@ -18,15 +20,13 @@ const printLevelOrder = (tree) => {
     while (!queue.isEmpty()) {
       current = queue.dequeue();
       printString += current.value;
-      level += 1;
-      console.log(level, 'level');
       for (let i = 0; i < current.children.length; i++) {
         queue.enqueue(current.children[i]);
+        level += 1; // ?
       }
-      if (count == 0) {
-        count = q.length();
+      if (level !== 0) {
         level += 1;
-        printString += `\n${  current.value}`;
+        printString += `\n${  current.value}`; // ?
       }
     }
     // while (queue.isEmpty()){
@@ -40,3 +40,18 @@ const printLevelOrder = (tree) => {
 };
 
 export default printLevelOrder;
+
+const one = new KAryNode(1);
+one.appendChild(2);
+one.appendChild(3);
+one.appendChild(4);
+
+one.children[1].appendChild(5);
+one.children[1].appendChild(6);
+one.children[1].appendChild(7);
+
+one.children[1].children[1].appendChild(8);
+
+const kAryTree = new KAryTree(one);
+
+printLevelOrder(kAryTree);
