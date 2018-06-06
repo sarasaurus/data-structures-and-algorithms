@@ -14,19 +14,19 @@ const swap = (array, left, right) => {
 
 const partition = (array, left, right) => {
   const pivot = array[Math.floor((left + right) / 2)]; // ?
-  let i = left;
-  let j = right;
+  let i = left; // ?
+  let j = right; // ?
   while (i <= j) {
     while (array[i] < pivot) { 
-      i++; // ?
+      i ++; // ?
     }
     while (array[j] > pivot) {
-      j--; // ?
+      j --; // ?
     }
     if (i <= j) {
       swap(array, i, j);
-      i++;
-      j--;
+      i ++;
+      j --;
     }
   }
   return i;// ?
