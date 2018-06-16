@@ -3,24 +3,40 @@
 import Node from './lib/tree-node';
 import Tree from './lib/binary-tree';
 
+// sarah's revamped code:
 
-// const findClosest = (tree, value) => {
-//   let closestSoFar;
-//   let differenceSoFar;
-//   _findClosest (node, value) {
-//     if (node.value === value) {
-//       return node;
-//     } else if (node.value > value) {
-//       closestSoFar = node.value;
-//       difference = value - node.value;
-//       _findClosest(node.left, value);
-//     } else if (node.value < value) {
-//       closestSoFar = node.value;
-//       difference = value - node.value;
-//       _findClosest(node.right, value);
-//     } 
-//   }
-// }
+const findClosest = (tree, target) => {
+  let currentDifference; //  ?
+  let leastDifference = Math.abs(tree.root.value - target);
+  let currentNode = tree.root;
+  while (currentNode !== null) {
+    if (currentNode.value === target) {
+      return currentNode.value; // ?
+    } else if (currentNode.value < target) {
+      currentDifference = Math.abs(target - currentNode.value);
+      if (currentDifference <= leastDifference) {
+        leastDifference = currentDifference;
+        if (currentNode.right) {
+          currentNode = currentNode.right;
+        }
+      } 
+      if (currentNode.right) {
+        currentNode = currentNode.right;
+      }
+    }
+    currentDifference = Math.abs(target - currentNode.value);
+    if (currentDifference <= leastDifference) {
+      leastDifference = currentDifference;
+      if (currentNode.left) {
+        currentNode = currentNode.left;
+      }
+    }
+    if (currentNode.left) {
+      currentNode = currentNode.left;
+    }
+  }
+  return leastDifference;
+};
 
 //----------------
 // vinicios code:
@@ -80,5 +96,6 @@ six.right = seven;
 const tree = new Tree(five);
 console.log(tree);
 
-findClosestNode(tree, 5).value; // ?
+// findClosestNode(tree, 5).value; // ?
+findClosest(tree, 19); // ? 
 
