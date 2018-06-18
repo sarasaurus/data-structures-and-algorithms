@@ -3,7 +3,7 @@
 import Node from './lib/tree-node';
 import Tree from './lib/binary-tree';
 
-// sarah's revamped code:
+// sarah's revamped code: Probably ignore this:
 
 const findClosest = (tree, target) => {
   let currentDifference; //  ?

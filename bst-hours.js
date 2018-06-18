@@ -32,55 +32,12 @@ class BinarySearchTree {
         this._insert(rootNode.left, nodeToInsert);
       }
     } else if (!rootNode.right) {
-    // can I move to the right branch
       rootNode.right = nodeToInsert;
     } else {
-    // add to the right?
       this._insert(rootNode.right, nodeToInsert);
     }
   }
 }
-const printUsersInOrder = (node) => {
-  const users = [];
-  while (node) {
-    printUsersInOrder(node.left);
-    console.log(node.userstories);
-    users.push(node.userstories);
-    printUsersInOrder(node.right);
-  }
-  return users;
-};
-
-// const findClosestHoursTrial = (tree, target) => {
-//   let lowestDifference = Math.abs(target - tree.root.userstories);
-//   let current = tree.root;
-//   let currentDifference = null;
-//   let nodeToReturn = null;
-//   while (current) {
-//     if (current.userstories === target) {
-//       return current;
-//     } else if (current.userstories < target) {
-//       currentDifference = Math.abs(target - current.userstories); // ?
-//       if (currentDifference <= lowestDifference) {
-//         lowestDifference = currentDifference;
-//         nodeToReturn = current;
-//       }
-//       if (current.left) {
-//         current = current.left;
-//       }
-//     } else if (current.userstories > target) {
-//       currentDifference = Math.abs(target - current.userstories); // ?
-//       if (currentDifference <= lowestDifference) {
-//         lowestDifference = currentDifference;
-//         nodeToReturn = current;
-//       }
-//       if (current.right) {
-//         current = current.right;
-//       }
-//     }
-//   }
-//   return nodeToReturn.hours;
-// };
 
 const findClosestHours = (tree, target) => {
   let lowestDifference = Math.abs(target - tree.root.userstories);
@@ -133,42 +90,11 @@ testTree.insert(testi);
 testTree.insert(testj);
 
 console.log(testTree);
-// printUsersInOrder(testTree.root); // ?
+
 findClosestHours(testTree, 700); // ?
 
 /**
- *  currentDifference = Math.abs(target - current.userstories); // ?
- *      if (currentDifference <= lowestDifference) {
-        lowestDifference = currentDifference;
-        nodeToReturn = current;
-        current = current.right;
-      }
+ * Big O
+ * Space: O(1) -- no recursion, no significant caching
+ * Time: O(lgN) -- where n is the number of nodes
  */
-
-
-/*
- *RECURSIVE
-  *   const find = (target) => {
-    if (!tree.root) {
-      return null;
-    }
-    return this._find(tree.root, target);
-  };
-
-  const _find = (rootNode, value) => { //eslint-disable-line
-    if (!rootNode) {
-      return null;
-    } else if (rootNode.value === value) {
-      nodeToReturn = rootNode;
-      return nodeToReturn;
-    } else if (rootNode.value < value) {
-      currentDifference = Math.abs(target - rootNode.userstories); // ?
-      if (currentDifference <= lowestDifference) {
-        lowestDifference = currentDifference;
-        nodeToReturn = rootNode;
-      }
-      return this._find(rootNode.right, value);
-    }
-    return this._find(rootNode.left, value);
-  };
-*/
