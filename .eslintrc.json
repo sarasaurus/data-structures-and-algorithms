@@ -9,6 +9,7 @@
         "no-param-reassign": ["error", { "props": false }],
         "no-trailing-spaces": "off",
         "strict": "off",
+        "no-underscore-dangle": "off",
         "linebreak-style": "off",
         "no-plusplus": [
             "error",
