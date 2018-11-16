@@ -23,6 +23,7 @@ describe('testing binary tree reversal', () => {
   seven.right = nine;
   tree = new BinaryTree(one);
   test('root.left should be 3', () => {
-    expect(reverse(tree).left).toEqual(3);
+    reverse(tree);
+    expect(tree.root.left.value).toEqual(3);
   });
 });

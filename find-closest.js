@@ -9,6 +9,7 @@ const findClosest = (tree, target) => {
   let currentDifference; //  ?
   let leastDifference = Math.abs(tree.root.value - target);
   let currentNode = tree.root;
+
   while (currentNode !== null) {
     if (currentNode.value === target) {
       return currentNode.value; // ?
@@ -16,6 +17,7 @@ const findClosest = (tree, target) => {
       currentDifference = Math.abs(target - currentNode.value);
       if (currentDifference <= leastDifference) {
         leastDifference = currentDifference;
+        
         if (currentNode.right) {
           currentNode = currentNode.right;
         }
